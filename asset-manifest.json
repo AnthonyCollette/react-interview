@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-interview/static/css/main.d09dcecd.css",
+    "main.js": "/react-interview/static/js/main.1182ecf9.js",
+    "index.html": "/react-interview/index.html",
+    "main.d09dcecd.css.map": "/react-interview/static/css/main.d09dcecd.css.map",
+    "main.1182ecf9.js.map": "/react-interview/static/js/main.1182ecf9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d09dcecd.css",
+    "static/js/main.1182ecf9.js"
+  ]
+}
