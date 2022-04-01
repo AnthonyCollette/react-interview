@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/react-interview/static/css/main.539be06f.css",
-    "main.js": "/react-interview/static/js/main.2ea4e57f.js",
+    "main.css": "/react-interview/static/css/main.cd9a3c8a.css",
+    "main.js": "/react-interview/static/js/main.27e4a128.js",
     "index.html": "/react-interview/index.html",
-    "main.539be06f.css.map": "/react-interview/static/css/main.539be06f.css.map",
-    "main.2ea4e57f.js.map": "/react-interview/static/js/main.2ea4e57f.js.map"
+    "main.cd9a3c8a.css.map": "/react-interview/static/css/main.cd9a3c8a.css.map",
+    "main.27e4a128.js.map": "/react-interview/static/js/main.27e4a128.js.map"
   },
   "entrypoints": [
-    "static/css/main.539be06f.css",
-    "static/js/main.2ea4e57f.js"
+    "static/css/main.cd9a3c8a.css",
+    "static/js/main.27e4a128.js"
   ]
 }
