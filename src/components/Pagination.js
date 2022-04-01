@@ -33,7 +33,7 @@ const Pagination = ({
 							onClick={() => {
 								paginate(number)
 							}}
-							href="!#"
+							href=""
 							className={number === 1 ? 'active' : ''}
 							id={'page-' + number}
 						>
