@@ -33,3 +33,20 @@
 		color: $color-001;
 	}
 }
+
+.refresh-btn {
+	width: fit-content;
+	width: -moz-fit-content;
+	margin: 0px auto 20px;
+	display: block;
+	background-color: $color-003;
+	border: 2px solid $color-001;
+	color: $color-001;
+	cursor: pointer;
+	padding: 10px 50px;
+	transition: all 0.4s ease-in-out;
+	&:hover {
+		background-color: $color-001;
+		color: $color-003;
+	}
+}

@@ -37,6 +37,7 @@ const Home = () => {
 			setCategories(_.uniqBy(movies, 'category'))
 		}
 	}
+	const filters = []
 	const like = (id) => {
 		const newVoteCount = [...movies]
 		const index = newVoteCount.findIndex(
@@ -67,6 +68,9 @@ const Home = () => {
 			}
 		})
 		setMovies(moviesFiltered)
+		filters.forEach((filter) => {
+			document.getElementById('input-' + filter).checked = false
+		})
 	}
 
 	const indexOfLastMovie = currentPage * moviesPerPage
@@ -100,7 +104,7 @@ const Home = () => {
 	const changeDisplay = (value) => {
 		setMoviesPerPage(value)
 	}
-	const filters = []
+
 	const addFilter = (value) => {
 		if (filters.includes(value)) {
 			if (filters.indexOf(value) !== -1) {
@@ -110,47 +114,72 @@ const Home = () => {
 			filters.push(value)
 		}
 	}
+
+	const resetList = () => {
+		movies$
+			.then((data) => {
+				setMovies(data)
+			})
+			.catch((error) => console.log(error))
+	}
+
 	return (
 		<>
-			<Filters
-				categories={categories}
-				sortByFilter={sortByFilter}
-				setCategories={setCategories}
-				movies={movies}
-				addFilter={addFilter}
-			/>
+			{currentMovies && currentMovies.length >= 1 ? (
+				<Filters
+					categories={categories}
+					sortByFilter={sortByFilter}
+					setCategories={setCategories}
+					movies={movies}
+					addFilter={addFilter}
+				/>
+			) : (
+				''
+			)}
 			<div className="cards">
-				{currentMovies?.map((movie, id) => (
-					<div key={id} className="card-wrapper">
-						<Card
-							key={id}
-							title={movie.title}
-							category={movie.category}
-							movie={movie}
-							deleteMovie={deleteMovie}
-						/>
+				{currentMovies && currentMovies.length >= 1 ? (
+					currentMovies.map((movie, id) => (
+						<div key={id} className="card-wrapper">
+							<Card
+								key={id}
+								title={movie.title}
+								category={movie.category}
+								movie={movie}
+								deleteMovie={deleteMovie}
+							/>
 
-						<Rating
-							movie={movie}
-							like={like}
-							dislike={dislike}
-							movies={movies}
-							currentPage={currentPage}
-						/>
+							<Rating
+								movie={movie}
+								like={like}
+								dislike={dislike}
+								movies={movies}
+								currentPage={currentPage}
+							/>
+						</div>
+					))
+				) : (
+					<div className="empty">
+						<p>Aucun film ne correspond à votre recherche !</p>
 					</div>
-				))}
+				)}
 			</div>
-
-			<Pagination
-				movies={movies.length}
-				moviesPerPage={moviesPerPage}
-				paginate={paginate}
-				paginateDown={paginateDown}
-				paginateUp={paginateUp}
-				changeDisplay={changeDisplay}
-				setPageNumbers={setPageNumbers}
-				pageNumbers={pageNumbers}
-			/>
+			<button className="refresh-btn" onClick={resetList}>
+				Rafraichir la liste
+			</button>
+			{currentMovies && currentMovies.length >= 1 ? (
+				<Pagination
+					movies={movies.length}
+					moviesPerPage={moviesPerPage}
+					paginate={paginate}
+					paginateDown={paginateDown}
+					paginateUp={paginateUp}
+					changeDisplay={changeDisplay}
+					setPageNumbers={setPageNumbers}
+					pageNumbers={pageNumbers}
+				/>
+			) : (
+				''
+			)}
 		</>
 	)
 }
