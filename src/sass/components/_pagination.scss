@@ -4,6 +4,7 @@
 	width: fit-content;
 	width: -moz-fit-content;
 	margin: 0 auto;
+	padding-left: 0;
 	li {
 		padding: 10px;
 		a {
@@ -37,9 +38,10 @@
 .select-wrapper {
 	display: flex;
 	color: $color-004;
-	margin: 20px auto;
+	margin: 40px auto 50px;
 	width: fit-content;
 	width: -moz-fit-content;
+	max-width: 70vw;
 	select {
 		margin-left: 10px;
 	}

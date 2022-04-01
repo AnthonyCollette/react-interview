@@ -20,11 +20,14 @@
 	color: $color-003;
 	padding: 5px 30px;
 	height: fit-content;
-	margin-left: 20px;
+	margin: 20px 0 0 0;
 	height: -moz-fit-content;
 	cursor: pointer;
 	transition: all 0.4s ease-in-out;
 	font-weight: 600;
+	@include min($sm) {
+		margin: 0 0 0 20px;
+	}
 	&:hover {
 		background-color: $color-003;
 		color: $color-001;
