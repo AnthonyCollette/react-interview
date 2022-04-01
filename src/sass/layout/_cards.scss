@@ -1,0 +1,56 @@
+.cards {
+	display: flex;
+	width: 80%;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	padding: 100px 0;
+	justify-content: center;
+}
+
+.card-wrapper {
+	position: relative;
+	width: 400px;
+	max-width: 80vw;
+	margin: 10px;
+	padding: 20px 50px;
+	background-color: $color-002;
+	border-radius: 10px;
+	min-height: 280px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	button {
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+	}
+	.rating-module {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 30px;
+	}
+	.likes,
+	.dislikes {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.number-wrapper {
+		display: flex;
+		width: 100px;
+		justify-content: space-between;
+		margin-top: 10px;
+	}
+	.jauge {
+		height: 5px;
+		width: 100px;
+		background-color: $color-003;
+		.ratio-likes {
+			height: 5px;
+			width: 0;
+			background-color: $color-001;
+		}
+	}
+}

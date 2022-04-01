@@ -1,0 +1,78 @@
+.filters {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 0;
+	.filter-wrapper {
+		border: none;
+		overflow: hidden;
+		width: 80vw;
+		max-width: 900px;
+		background-color: transparent;
+		padding: 5px;
+		text-align: center;
+		&:focus,
+		&:active {
+			outline: none;
+		}
+		.input-wrapper {
+			display: inline-block;
+			width: fit-content;
+			width: -moz-fit-content;
+			position: relative;
+			font-size: 0.938rem;
+			color: $color-003;
+			margin: 0 10px;
+			cursor: pointer;
+			label {
+				transition: all 0.4s ease-in-out;
+				text-align: center;
+				background-color: $color-002;
+				font-weight: 600;
+				padding: 10px 20px 10px 40px;
+				border-radius: 10px;
+				cursor: pointer;
+				position: relative;
+				border: 2px solid $color-003;
+				&::before {
+					content: '';
+					position: absolute;
+					left: 10px;
+					top: 50%;
+					transform: translateY(-50%);
+					height: 20px;
+					width: 20px;
+					border-radius: 100%;
+					background-color: $color-003;
+					transition: all 0.4s ease-in-out;
+				}
+				&:hover {
+					background-color: $color-003;
+					color: $color-001;
+					border: 2px solid $color-001;
+					&::before {
+						background-color: $color-001;
+					}
+				}
+			}
+
+			input {
+				position: absolute;
+				left: -9999px;
+			}
+
+			input:checked + label {
+				background-color: $color-003;
+				color: $color-001;
+				border-color: $color-001;
+				&::before {
+					background-color: $color-001;
+				}
+			}
+		}
+		.checked {
+			background-color: $color-001;
+			color: $color-003;
+		}
+	}
+}

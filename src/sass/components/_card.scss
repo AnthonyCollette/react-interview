@@ -1,0 +1,24 @@
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	h2 {
+		font-size: 1.5rem;
+		font-weight: 800;
+		text-align: center;
+		line-height: 1.2;
+		color: $color-003;
+		@include min($lg) {
+			font-size: 2rem;
+		}
+	}
+	.filter {
+		font-size: 1rem;
+		color: $color-001;
+		background-color: $color-003;
+		padding: 5px 10px;
+		width: fit-content;
+		width: -moz-fit-content;
+		margin-top: 50px;
+	}
+}

@@ -1,0 +1,46 @@
+.pagination {
+	display: flex;
+	list-style: none;
+	width: fit-content;
+	width: -moz-fit-content;
+	margin: 0 auto;
+	li {
+		padding: 10px;
+		a {
+			color: $color-004;
+			text-decoration: none;
+			transition: all 0.2s ease-in-out;
+			border-bottom: 2px transparent solid;
+			padding: 10px;
+			&:hover {
+				color: $color-001;
+				border-bottom: 2px $color-001 solid;
+			}
+		}
+	}
+	button {
+		background-color: transparent;
+		border: none;
+		color: $color-004;
+		cursor: pointer;
+		transition: all 0.2s ease-in-out;
+		&:hover {
+			color: $color-001;
+		}
+	}
+	.active {
+		color: $color-001;
+		border-bottom: 2px $color-001 solid;
+	}
+}
+
+.select-wrapper {
+	display: flex;
+	color: $color-004;
+	margin: 20px auto;
+	width: fit-content;
+	width: -moz-fit-content;
+	select {
+		margin-left: 10px;
+	}
+}
