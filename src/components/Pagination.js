@@ -28,17 +28,15 @@ const Pagination = ({
 					<i class="fa-solid fa-angle-left"></i>
 				</button>
 				{pageNumbers?.map((number) => (
-					<li key={number} className="page-item">
-						<a
-							onClick={() => {
-								paginate(number)
-							}}
-							href=""
-							className={number === 1 ? 'active' : ''}
-							id={'page-' + number}
-						>
-							{number}
-						</a>
+					<li
+						key={number}
+						id={'page-' + number}
+						className={number === 1 ? 'active' : ''}
+						onClick={() => {
+							paginate(number)
+						}}
+					>
+						{number}
 					</li>
 				))}
 				<button onClick={paginateUp} className="next">
